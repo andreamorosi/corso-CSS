@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Sintassi</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Sintassi: esempi e combinators</h1>
+            </header>
+
+            <main class="slide__main">
+                <pre>
+                    <code>
+        p, h1 {
+            color: red;
+        }
+
+        .hello, a {
+            color: blue;
+        }
+
+        .hello:first-child {
+            color: green;
+        }
+
+        #hello p {
+            color: red;
+        }
+
+        p * {
+            color: red;
+        }
+                    </code>
+                </pre>
+
+                <hr>
+
+                <h2>Combinators</h2>
+                <h3>Ovvero come selezionare l'elemento corretto in maniera più avanzata.</h3>
+                <p class="text">
+                    Esistono 4 modi per avere più selectors in una regola CSS:
+                    <br>
+                    <ul class="list">
+                        <li class="list__item">Descendant selector <em>space</em></li>
+                        <li class="list__item">Child selector <em>></em></li>
+                        <li class="list__item">Adjacent sibling selector <em>+</em></li>
+                        <li class="list__item">General sibling selector <em>~</em></li>
+                    </ul>
+                </p>
+                
+                <hr>
+                <h2>Descendant selector <em>space</em></h2>
+                <p class="text">
+                    Questo selettore applica la regola CSS al discendente dell'elemento specificato.
+                </p>
+
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        div h1 {
+            color: red;
+        }
+        h1 {
+            color: blue;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <div>
+            <h1>Hello</h1>
+            <span>
+                <h1>World</h1>
+            </span>
+        </div>
+        <h1>I shouldn't be red.</h1>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                    div.p1 h1.h1 {
+                        color: red;
+                    }
+                    h1.h1 {
+                        color: blue;
+                    } 
+                    </style>
+                    <div class="p1">
+                        <h1 class="h1">Hello</h1>
+                        <span>
+                            <h1 class="h1">World</h1>
+                        </span>
+                    </div>
+                    <h1 class="h1">I shouldn't be red.</h1>
+                </div>
+
+                <hr>
+
+                <h2>Child selector <em>></em></h2>
+                <p class="text">
+                    Il funzionamento è simile al Descendant selector, solo che il selector in questione 
+                    tratta solo l'elemento che è figlio diretto, riprendendo l'esempio di prima e 
+                    applicando un child selector è molto semplice da capire:
+                </p>
+
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        div h1 {
+            color: red;
+        }
+        h1 {
+            color: blue;
+        }
+        div > h1 {
+            color: green
+        }
+                    </code>
+                </pre>
+
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <div>
+            <h1>Hello</h1>
+            <span>
+                <h1>World</h1>
+            </span>
+        </div>
+        <h1>I shouldn't be red.</h1>
+                    </code>
+                </pre>
+
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                        div.d2 h1.h2p {
+                            color: red;
+                        }
+                        h1.h2p {
+                            color: blue;
+                        }
+                        div.d2 > h1.h2p {
+                            color: green
+                        }    
+                    </style>
+                    <div class="d2">
+                        <h1 class="h2p">Hello</h1>
+                        <span>
+                            <h1 class="h2p">World</h1>
+                        </span>
+                    </div>
+                    <h1 class="h2p">I shouldn't be red.</h1>
+                </div>
+
+                <hr>
+
+                <h2>Adjacent sibling selector <em>+</em></h2>
+                <p class="text">
+                    Questo selettore applica la regola all'elemento immediatamente adiacente 
+                    all'elemento specificato:
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        div + h1 {
+            color: red;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <div>
+            <h1>Hello</h1>
+        </div>
+        <h1>World</h1>
+        <h1>I shouldn't be red.</h1>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                        div.poi1 + h1.poi23 {
+                            color: red;
+                        }
+                    </style>
+                    <div class="poi1">
+                        <h1 class="poi23">Hello</h1>
+                    </div>
+                    <h1 class="poi23">World</h1>
+                    <h1 class="poi23">I shouldn't be red.</h1>
+                </div>
+
+                <hr>
+
+                <h2>General sibling selector <em>~</em></h2>
+                <p class="text">
+                    Questo selettore applica la regola agli elementi fratelli all'elemento 
+                    specificato.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        div ~ h1 {
+            color: red;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <h1>Hello</h1>
+        <div>
+            <h1>World</h1>
+        </div>
+        <h1>I'm a sibling</h1>
+        <h1>So am I</h1>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                       div.inh3 ~ h1.wt4 {
+                        color: cadetblue;
+                    } 
+                    </style>
+                    <h1 class="wt4">Hello</h1>
+                    <div class="inh3">
+                        <h1 class="wt4">World</h1>
+                    </div>
+                    <h1 class="wt4">I'm a sibling</h1>
+                    <h1 class="wt4">So am I</h1>
+                </div>
+
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="/modules/specifity.html" class="btn">Specifity</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
