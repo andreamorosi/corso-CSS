@@ -76,6 +76,14 @@ blockquote:after {
     padding: 0.5rem 0;
 }
 
+.example {
+    font-size: 25.6px;
+    font-size: 1.6rem;
+    margin: 16px 0 0;
+    margin: 1rem 0 0;
+    border-bottom: 2px solid;
+}
+
 .slide {
     max-width: 1200px;
     margin: 0 auto;
@@ -86,9 +94,6 @@ blockquote:after {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
     height: 100%;
     min-height: 100vh;
 }
@@ -117,18 +122,38 @@ blockquote:after {
     text-align: center;
 }
 
-.code {
+code {
     background: #3f3f3f;
     color: #1adcb8;
     white-space: pre;
-    padding: 16px;
-    padding: 1rem;
+    padding: 32px;
+    padding: 2rem;
     font-size: 19.2px;
     font-size: 1.2rem;
+    display: block
+}
+
+code.base {
+    white-space: normal;
 }
 
 em {
     background: #ffff6d;
     font-style: normal;
+}
+
+.result {
+    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    margin: 16px 0;
+    margin: 1rem 0;
+    border: 2px dashed #433673;
+}
+
+hr {
+    border: 0;
+    border-bottom: 2px dashed #433673;
+    margin: 96px 0;
+    margin: 6rem 0;
 }
 /*# sourceMappingURL=styles.css.map */
