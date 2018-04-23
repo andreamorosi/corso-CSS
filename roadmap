@@ -1,0 +1,269 @@
+#   Introduzione
+    Cascading Style Sheets (CSS) is a stylesheet language used to describe 
+    the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). 
+    CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+    - mozilla
+
+    p {
+        color: red;
+    }
+    ^ ruleset
+
+    Spiegare questo esempio, e la sintassi, comprese {} : e ;
+    p -> selector
+    color -> property
+    red -> valore property
+    color: red; -> declaration
+
+    ///
+
+#   Applicare il CSS al nostro documento HTML
+    Ci sono 3 modi per applicare diversi per applicare il CSS ad un documento HTML:
+        1.  Inline
+        2.  Internal
+        3.  External
+
+        ##  Inline
+            Viene scritto direttamente nel documento HTML, precisamente
+            all'interno dell'elemento, nel attributo style.
+
+            <p>Hello World</p>
+
+            Applichiamo lo stile, scrivendo la dichiarazione all'interno dell'attributo
+            style dell'elemento.
+            <p style="color:red;">Hello World</p>
+
+        ##  Internal
+            Viene scritto direttamente nel documento HTML, tra il tag <style>.
+            In genere viene messo all'interno del tag <head>, ma può essere messo
+            in qualsiasi parte del documento HTML.
+
+            <style>
+                p {
+                    color: red;
+                }
+
+                h1 {
+                    color: green;
+                }
+
+                a {
+                    color: blue;
+                }
+            </style>
+
+        ## External
+            Viene scritto all'interno di un file CSS, e poi applicato ad un documento HTML.
+            Per esempio, abbiamo un file stile.css, dove abbiamo la seguente regola:
+            
+            p {
+                color: red;
+            }
+
+            Per applicare il nostro stile, contenuto nel file stile.css, 
+            dobbiamo inserire
+            <link href="stile.css" rel="stylesheet" type="text/css">
+            all'interno dell'head del documento HTML, come in esempio:
+
+            <html>
+                <head>
+                    <title>Hello World</title>
+                    <link href="stile.css" rel="stylesheet" type="text/css">
+                </head>
+                <body>
+                    <p>Questo è un paragrafo</p>
+                </body>
+            </html>
+
+    #   Selettori
+        Ci sono diversi modi per selezionare a quale elemento applicare le nostre regole CSS:
+            1. Element selector
+            2. Class selector
+            3. ID selector
+            4. Attribute selector
+            5. Pseudo-class selector
+            6. Pseudo-element selector
+
+            ##  Element selector
+                Viene applicato lo stile a tutti gli elementi della regola CSS.
+                p {
+                    color: red;
+                }
+                Tutti gli elementi <p> saranno di colore rosso.
+
+            ##  Class selector
+                Viene applicato lo stile a tutti gli elementi della classe specificata
+                dalla regola CSS.
+
+                .hello {
+                    color: red;
+                }
+                ///
+                <h1 class="hello">Titolo</h1>
+                <p class="hello">Paragrafo</p>
+
+            ##  ID selector
+                Viene applicato lo stile all'elemento di ID specificato dalla regola CSS.
+                Nota bene: puoi avere solo 1 elemento per ID.
+
+                #hello {
+                    color: red;
+                }
+                ///
+                <h1 id="hello">Titolo</h1>
+                <p id="hello">Paragrafo</p>
+
+            ##  Attribute selector
+                Viene applicato lo stile a tutti gli elementi con l'attribute specificato
+                dalla regola CSS.
+
+                a[target="_blank"] { 
+                    color: red;
+                }
+                ///
+                <a href="#">Just</a>
+                <a href="#" target="_blank">another</a>
+                <a href="#">Hello</a>
+                <a href="#" target="_blank">World</a>
+
+            ##  Pseudo-class selector
+                Viene applicato lo stile a tutti gli elementi selezionati dalla pseudo-classe.
+
+                a:hover {
+                    color: red;
+                }
+                a:first-child {
+                    color: blue;
+                }
+                ///
+                <a href="#">Hello</a>
+                <a href="#">World</a>
+
+            ##  Pseudo-element selector
+                Viene applicato lo stile a tutti gli elementi selezionati dallo pseudo-elemento.
+                
+                p:after {
+                    content: "World";
+                }
+                ///
+                <p>Hello </p>
+
+    #   Sintassi: esempi e combinators
+        Fare qualche esempio e spiegarlo
+
+        p, h1 {
+            color: red;
+        }
+
+        .hello, a {
+            color: blue;
+        }
+
+        .hello:first-child {
+            color: green;
+        }
+
+        #hello p {
+            color: red;
+        }
+
+        p * {
+            color: red;
+        }
+
+            # Combinators
+            -sottotitolo-Ovvero come selezionare l'elemento corretto in maniera più avanzata.
+
+            Esistono 4 modi per avere più selectors in una regola CSS:
+                1. Descendant selector (space)
+                2. Child selector (>)
+                3. Adjacent sibling selector (+)
+                4. General sibling selector (~)
+
+                ## Descendant selector (space)
+                Questo selettore applica la regola CSS al discendente dell'elemento specificato.
+
+                p h1 {
+                    color: red;
+                }
+                h1 {
+                    color: blue;
+                }
+                ///
+                <p>
+                    <h1>Hello</h1>
+                    <span>
+                        <h1>World</h1>
+                    </span>
+                </p>
+                <h1>I shouldn't be red.</h1>
+
+                ## Child selector (>)
+                Il funzionamento è simile al Descendant selector, solo che il selector in questione 
+                tratta solo l'elemento che è figlio diretto, riprendendo l'esempio di prima e 
+                applicando un child selector è molto semplice da capire:
+
+                p h1 {
+                    color: red;
+                }
+                h1 {
+                    color: blue;
+                }
+                p > h1 {
+                    color: green
+                }
+                ///
+                <p>
+                    <h1>Hello</h1>
+                    <span>
+                        <h1>World</h1>
+                    </span>
+                </p>
+                <h1>I shouldn't be red.</h1>
+
+                ## Adjacent sibling selector (+)
+                Questo selettore applica la regola all'elemento immediatamente adiacente 
+                all'elemento specificato:
+
+                p + h1 {
+                    color: red;
+                }
+                ///
+                <p>
+                    <h1>Hello</h1>
+                </p>
+                <h1>World</h1>
+                <h1>I shouldn't be red.</h1>
+
+                ## General sibling selector (~)
+                Questo selettore applica la regola agli elementi fratelli all'elemento 
+                specificato.
+
+                p ~ h1 {
+                    color: red;
+                }
+                ///
+                <h1>Hello</h1>
+                <p>
+                    <h1>World</h1>
+                </p>
+                <h1>I'm a sibling</h1>
+                <h1>So am I</h1>
+
+            #   Specificity
+                Anche se nel CSS segue il flusso a cascata, le regole hanno diversi pesi,
+                e quindi alcune sono più specifiche di altre.
+
+                <p id="para-id" class="para-class">Hello World</p>
+
+                p {
+                    color: red;
+                }
+                #para-id {
+                    color: green;
+                }
+                .para-class {
+                    color: blue;
+                }
+
+                

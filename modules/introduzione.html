@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Intro</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Cosa è il CSS</h1>
+            </header>
+            
+            <main class="slide__main">
+                <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                    Cascading Style Sheets (CSS) is a stylesheet language used to describe 
+                    the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). 
+                    CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+                </blockquote>
+
+                <p class="text">
+                    Prendiamo per esempio il seguente codice:
+                </p>
+                <div class="code">
+                    p {
+                        color: blue;
+                    }
+                </div>
+                <p class="text">
+                    Questo è un CSS ruleset, ovvero una regola CSS.
+                    <br>
+                    Una regola CSS è formata così:
+                    <ul class="list">
+                        <li class="list__item"><em>Selector</em>, ovvero il nostro <code>p</code>.</li>
+                        <li class="list__item"><em>Property</em>, ovvero il nostro <code>color</code>.</li>
+                        <li class="list__item"><em>Property value</em>, ovvero il nostro <code>blue</code>.</li>
+                    </ul>
+                    <p class="text">
+                        L'insieme di property e property value forma una <em>Declaration</em>.
+                    </p>
+                    
+                    <ul class="list">
+                        <li class="list__item">
+                            <em>{}</em> : le parentesi graffe mi servono per contenere la regola CSS.
+                        </li>
+                        <li class="list__item">
+                            <em>:</em> : i due punti mi servono per separare property dal property value.
+                        </li>
+                        <li class="list__item">
+                            <em>;</em> : il punto & virgola mi serve per separare una declaration dall'altra.
+                        </li>
+                    </ul>
+
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="/modules/applicare.html" class="btn">NEXT</a>
+            </footer>
+        </section>
+    </body>
+</html>

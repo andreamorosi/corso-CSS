@@ -1,0 +1,15 @@
+.text-align-center {
+    text-align: center;
+}
+
+.code {
+    background: $dark;
+    color: $main;
+    white-space: pre;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+em {
+    background: #ffff6d;
+    font-style: normal;
+}
