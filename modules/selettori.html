@@ -1,0 +1,231 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Selettori</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Selettori</h1>
+            </header>
+
+            <main class="slide__main">
+                <p class="text">
+                    Ci sono diversi modi per selezionare a quale elemento applicare le nostre regole CSS:
+                </p>
+                <ol class="list">
+                    <li class="list__item">Element selector</li>
+                    <li class="list__item">Class selector</li>
+                    <li class="list__item">ID selector</li>
+                    <li class="list__item">Attribute selector</li>
+                    <li class="list__item">Pseudo-class selector</li>
+                    <li class="list__item">Pseudo-element selector</li>
+                </ol>
+
+                <hr>
+
+                <h2>Element selector</h2>
+                <p class="text">
+                    Viene applicato lo stile a tutti gli elementi della regola CSS.
+                </p>
+                <pre>
+                    <code>
+        p {
+            color: red;
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    Tutti gli elementi <em>&lt;p&gt;</em> saranno di colore rosso.
+                </p>
+
+                <hr>
+
+                <h2>Class selector</h2>
+                <p class="text">
+                    Viene applicato lo stile a tutti gli elementi della classe specificata
+                    dalla regola CSS.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .hello {
+            color: red;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <h1 class="hello">Titolo</h1>
+        <p class="hello">Paragrafo</p>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                        .hello-1 {
+                            color: red;
+                        }
+                    </style>
+                    <h1 class="hello-1">Titolo</h1>
+                    <p class="hello-1">Paragrafo</p>
+                </div>
+
+                <hr>
+
+                <h2>ID selector</h2>
+                <p class="text">
+                    Viene applicato lo stile all'elemento di ID specificato dalla regola CSS.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        #hello {
+            color: violet;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <h1 id="hello">Titolo</h1>
+                    </code>
+                </pre>
+
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                        #hello-2 {
+                            color: violet;
+                        }
+                    </style>
+                    <h1 id="hello-2">Titolo</h1>
+                </div>
+
+                <hr>
+
+                <h2>Attribute selector</h2>
+                <p class="text">
+                    Viene applicato lo stile a tutti gli elementi con l'attribute specificato
+                    dalla regola CSS.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        a[target="_blank"] { 
+            background: coral;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <a href="#">Just</a>
+        <a href="#" target="_blank">another</a>
+        <a href="#">Hello</a>
+        <a href="#" target="_blank">World</a>
+                    </code>
+                    <h6 class="example">Risultato</h6>
+                    <div class="result">
+                        <style>
+                            a.a1[target="_blank"] {
+                                background: coral;
+                            }
+                        </style>
+                        <a class="a1" href="#">Just</a>
+                        <a class="a1" href="#" target="_blank">another</a>
+                        <a class="a1" href="#">Hello</a>
+                        <a class="a1" href="#" target="_blank">World</a>
+                    </div>
+                </pre>
+
+                <hr>
+
+                <h2>Pseudo-class selector</h2>
+                <p class="text">
+                    Viene applicato lo stile a tutti gli elementi selezionati dalla pseudo-classe.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        a:hover {
+            background: wheat;
+        }
+        a:first-child {
+            background: crimson;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <p>
+            <a href="#">Hello </a>
+            <a href="#">World</a>
+        </p>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                    a.a45:hover {
+                        background: wheat;
+                    }
+                    a.a45:first-child {
+                        background: crimson;
+                    }
+                    </style>
+
+                    <p>
+                        <a class="a45" href="#">Hello </a>
+                        <a class="a45" href="#">World</a>
+                    </p>
+                </div>
+
+                <hr>
+
+                <h2>Pseudo-element selector</h2>
+                <p class="text">
+                    Viene applicato lo stile a tutti gli elementi selezionati dallo pseudo-elemento.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        p:after {
+            content: "World";
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <p>Hello </p>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>p.p123:after{content: "World";}</style>
+                    <p class="p123">Hello </p>
+                </div>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="/modules/applicare.html" class="btn">NEXT</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>

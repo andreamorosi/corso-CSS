@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Come applicare il CSS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Come applicare il CSS</h1>
+            </header>
+
+            <main class="slide__main">
+                <p class="text">
+                    Ci sono 3 modi per applicare del CSS ad un documento HTML:  
+                    <br>
+                    <ul class="list">
+                        <li class="list__item"><em>Inline</em></li>
+                        <li class="list__item"><em>Internal</em></li>
+                        <li class="list__item"><em>External</em></li>
+                    </ul>
+                </p>
+                <hr>
+                <h2>Inline</h2>
+                <p class="text">
+                    Viene scritto direttamente nel documento HTML, precisamente
+                    all'interno dell'elemento, nel attributo style.
+                </p>
+                <h3 class="example">Esempio:</h3>
+                <pre>
+                    <code>
+    <p>Hello World</p>
+                    </code>
+                </pre>
+                <p class="text">
+                    Applichiamo lo stile, scrivendo la dichiarazione all'interno dell'attributo
+                    style dell'elemento.
+                </p>
+                <pre>
+                    <code>
+    <p style="color:red;">Hello World</p>
+                    </code>
+                </pre>
+
+                <hr>
+                <h2>Internal</h2>
+                <p class="text">
+                        Viene scritto direttamente nel documento HTML, tra il tag <em>&lt;style&gt;</em>.
+                        In genere viene messo all'interno del tag <em>&lt;head&gt;</em>, ma può essere messo
+                        in qualsiasi parte del documento HTML.
+                </p>
+                <pre>
+                    <code>
+    <style>
+        p {
+            color: red;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        a {
+            color: blue;
+        }
+    </style>
+                    </code>
+                </pre>
+                <hr>
+                <h2>External</h2>
+                <p class="text">
+                    Viene scritto all'interno di un file CSS, e poi applicato ad un documento HTML.
+                    Per esempio, abbiamo un file stile.css, dove abbiamo la seguente regola:
+                </p>
+                <pre>
+                    <code>
+    p {
+        color: red;
+    }
+                    </code>
+                </pre>
+                <p class="text">
+                    Per applicare il nostro stile, contenuto nel file stile.css, 
+                    dobbiamo inserire
+                </p>
+                <pre>
+                    <code>
+    <link href="stile.css" rel="stylesheet" type="text/css">
+                    </code>
+                </pre>
+                <p class="text">
+                    all'interno dell'head del documento HTML.
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="/modules/selettori.html" class="btn">NEXT</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>

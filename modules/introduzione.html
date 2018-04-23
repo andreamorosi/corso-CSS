@@ -27,19 +27,21 @@
                 <p class="text">
                     Prendiamo per esempio il seguente codice:
                 </p>
-                <div class="code">
-                    p {
-                        color: blue;
-                    }
-                </div>
+                <pre>
+                    <code>
+    p {
+        color: blue;
+    }
+                    </code>
+                </pre>
                 <p class="text">
                     Questo è un CSS ruleset, ovvero una regola CSS.
                     <br>
                     Una regola CSS è formata così:
                     <ul class="list">
-                        <li class="list__item"><em>Selector</em>, ovvero il nostro <code>p</code>.</li>
-                        <li class="list__item"><em>Property</em>, ovvero il nostro <code>color</code>.</li>
-                        <li class="list__item"><em>Property value</em>, ovvero il nostro <code>blue</code>.</li>
+                        <li class="list__item"><em>Selector</em>, ovvero il nostro <em>p</em>.</li>
+                        <li class="list__item"><em>Property</em>, ovvero il nostro <em>color</em>.</li>
+                        <li class="list__item"><em>Property value</em>, ovvero il nostro <em>blue</em>.</li>
                     </ul>
                     <p class="text">
                         L'insieme di property e property value forma una <em>Declaration</em>.
@@ -64,5 +66,11 @@
                 <a href="/modules/applicare.html" class="btn">NEXT</a>
             </footer>
         </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+        
     </body>
 </html>
