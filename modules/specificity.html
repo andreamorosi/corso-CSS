@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Corso CSS - Sintassi</title>
+        <title>Corso CSS - Specificity</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,10 +14,154 @@
     <body>
         <section class="slide">
             <header class="slide__header">
-                <h1 class="slide__header-title">Sintassi: esempi e combinators</h1>
+                <h1 class="slide__header-title">Specificity</h1>
             </header>
 
             <main class="slide__main">
+                
+                <p class="text">
+                    Quando due o più dichiarazioni CSS hanno come obiettivo lo stesso elemento, si ha un caso di specifity, ovvero 
+                    lo stile della dichiarazione (della CSS ruleset) più specifica verrà applicato all'elemento. 
+                </p>
+                <br>
+                <h2>Ma come si calcola la specifity? Ovvero quale dichiarazione vince?</h2>
+                <br>
+                <p class="text">
+                    I selettori di classe, ID, elemento, attributo, pseudo elemento e pseudo classe vanno ad influire 
+                    sul calcolo, mentre i <em>combinators</em>, <em>:not()</em> (pseudo classe) e il selettore universale <em>(*)</em> no.
+                    
+                    Gli stili applicati inline vanno sempre a sovrascrivere gli stili applicati in external.
+                    <br>
+                    In linea di massima:
+                </p>
+                <ul class="list">
+                    <li class="list__item">Stile inline ha un peso di <em>1000</em></li>
+                    <li class="list__item">ID selector ha un peso di <em>100</em></li>
+                    <li class="list__item">Class selector, attribute selector, pseudo-class selector hanno un peso di <em>10</em></li>
+                    <li class="list__item">Element selector, pseudo-element selector hanno un peso di <em>1</em></li>
+                    <li class="list__item">Il CSS ereditato ha un peso di <em>0</em></li>
+                </ul>
+
+                <br>
+                <div class="text-align-center">
+                    <img src="/assets/img/specificity-wars.jpg" alt="">
+                </div>
+                <br>
+
+                <p class="text">
+                    Una regola CSS ha spesso più selettori, tipo:
+                </p>
+                <pre>
+                    <code>
+        p.classe {
+            color: blue;
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    Questa regola ha 11 di peso, in quanto l'element selector <em>p</em> ha 1 di peso, mentre 
+                    il class selector <em>.classe</em> ha 10, 10+1=11.
+
+                    Può far comodo usare degli strumenti appositi per calcolare la specifity, tipo 
+                    <a href="https://specificity.keegan.st/" style="color:blueviolet;font-size: 1.4rem;">https://specificity.keegan.st/</a>
+                </p>
+
+                <p class="text">
+                    <h3>Occhio all'<em>!important</em></h3>
+                </p>
+                
+                <pre>
+                    <code>
+        p {
+            color: red!important;
+        }
+        .hey {
+            color: green;
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    L'!important, essendo una regola che viene applicata su una dichiarazione CSS, non ha un peso, 
+                    però va a sovrascrivere tutte le altre dichiarazioni con cui va a in conflitto: 
+                    è quindi buona regola evitare di usare l'!important quando possibile, visto che
+                    <em>va ad alterare il flusso del nostro CSS.</em>
+                    <br>
+                    <div class="text-align-center">
+                            <img src="/assets/img/dankmeme.png" style="width:400px;" alt="">
+                        </div>
+                </p>
+
+                <p class="text">
+                    ⚠️ Examples ahead
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .gira {
+            color: red!important;
+        }
+        #sole {
+            color: green;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <p id="sole" class="gira">Qualcosa di interessante</p>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+        .gira {
+            color: red!important;
+        }
+        #sole {
+            color: green;
+        }
+                    </style>
+                    <p id="sole" class="gira">Qualcosa di interessante</p>
+                </div>
+
+                <br>
+                <p class="text">
+                    Per sovrascrivere un !important, serve un altro !important, appartenente ad una regola CSS 
+                    con più specifity, riprendendo l'esempio di prima:
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .gira {
+            color: red!important;
+        }
+        #sole {
+            color: green!important;
+            /* Questo important appartiene ad una ruleset più specifica */
+        }
+                    </code>
+                </pre>
+                <p class="text">Stesso HTML</p>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+        .gira1 {
+            color: red!important;
+        }
+        #sole1 {
+            color: green!important;
+        }
+                    </style>
+                    <p id="sole1" class="gira1">Qualcosa di interessante</p>
+                </div>
+                
+
+
+
+
+
+
+
                 <pre>
                     <code>
         p, h1 {
@@ -247,7 +391,7 @@
             </main>
 
             <footer class="slide__footer text-align-center">
-                <a href="/modules/specificity.html" class="btn">Specifity</a>
+                <a href="/modules/specifity.html" class="btn">Specifity</a>
             </footer>
         </section>
         <script>
