@@ -23,10 +23,19 @@
                     the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). 
                     CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
                 </blockquote>
+                <br>
+                <h3>Per i meno anglofoni:</h3>
+                <p class="text">
+                    Per CSS si intende "fogli di stile a cascata", ovvero un linguaggio che permette di 
+                    descrivere la presentazione dei vari elementi all'interno di un documento HTML o XML, 
+                    conferendone un layout.
+                </p>
+                <br>
 
                 <p class="text">
                     Prendiamo per esempio il seguente codice:
                 </p>
+                <h6 class="example">CSS</h6>
                 <pre>
                     <code>
     p {
@@ -34,32 +43,34 @@
     }
                     </code>
                 </pre>
-                <p class="text">
-                    Questo è un CSS ruleset, ovvero una regola CSS.
-                    <br>
-                    Una regola CSS è formata così:
-                    <ul class="list">
-                        <li class="list__item"><em>Selector</em>, ovvero il nostro <em>p</em>.</li>
-                        <li class="list__item"><em>Property</em>, ovvero il nostro <em>color</em>.</li>
-                        <li class="list__item"><em>Property value</em>, ovvero il nostro <em>blue</em>.</li>
-                    </ul>
-                    <p class="text">
-                        L'insieme di property e property value forma una <em>Declaration</em>.
-                    </p>
-                    
-                    <ul class="list">
-                        <li class="list__item">
-                            <em>{}</em> : le parentesi graffe mi servono per contenere la regola CSS.
-                        </li>
-                        <li class="list__item">
-                            <em>:</em> : i due punti mi servono per separare property dal property value.
-                        </li>
-                        <li class="list__item">
-                            <em>;</em> : il punto & virgola mi serve per separare una declaration dall'altra.
-                        </li>
-                    </ul>
 
+                <p class="text">
+                    Qui stabiliamo che il nostro elemento HTML <em>&lt;p&gt;</em> deve 
+                    avere come colore il blu: questo è un CSS ruleset, ovvero una regola CSS.
+                    <br><br>
+                    Una regola CSS è formata così:
                 </p>
+                <ul class="list">
+                    <li class="list__item"><em>Selector</em>, ovvero il nostro <em>p</em>.</li>
+                    <li class="list__item"><em>Property</em>, ovvero il nostro <em>color</em>.</li>
+                    <li class="list__item"><em>Property value</em>, ovvero il nostro <em>blue</em>.</li>
+                </ul>
+                <p class="text">
+                    L'insieme di property e property value forma una <em>Declaration</em>.
+                </p>
+                
+                <ul class="list">
+                    <li class="list__item">
+                        <em>{}</em> : le parentesi graffe mi servono per contenere la regola CSS.
+                    </li>
+                    <li class="list__item">
+                        <em>:</em> : i due punti mi servono per separare property dal property value.
+                    </li>
+                    <li class="list__item">
+                        <em>;</em> : il punto & virgola mi serve per separare una declaration dall'altra.
+                    </li>
+                </ul>
+
             </main>
 
             <footer class="slide__footer text-align-center">

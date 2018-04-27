@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Reference</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Reference</h1>
+            </header>
+
+            <main class="slide__main">
+
+                <p class="text">
+                    Diversi elementi hanno diverse proprietà, e a loro volta diversi valori: abbiamo visto spesso 
+                    l'elemento <em>&lt;p&gt;</em> sottoposto alla dichiarazione di cambiamento di colore 
+                </p>
+                    <pre>
+                        <code>
+        p {
+            color: red;
+        }
+                        </code>
+                    </pre>
+                <p class="text">
+                    ma possiamo andare a cambiare anche la grandezza del carattere, il colore dello sfondo, etc...
+                    <br>
+                    <br>
+                    Ci sono molte risorse online per avere una reference completa sulle proprietà CSS e relativi valori, 
+                    io consiglio quella di mozilla in quanto è ben documentata e sempre aggiornata.
+                    <br>
+                    <br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a>
+                </p>
+
+                <br>
+                <hr>
+                <h2>Unità di misura</h2>
+                <p class="text">
+                    Alcune proprietà CSS hanno come valori delle grandezze, e spesso accompagnate da unità di misura, per esempio possiamo 
+                    stabilire che un <em>&lt;p&gt;</em> avrà una grandezza di carattere di 16 pixel
+                </p>
+                <pre>
+                    <code>
+        p {
+            font-size: 16px;
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    Ma il pixel non è l'unica unità di misura presente nel CSS, esistono altre unità, divise in due categorie: 
+                    <em>Absolute Lengths</em> e <em>Relative Lengths</em>.
+                </p>
+                <br>
+                <h2>Absolute Lengths</h2>
+                <p class="text">
+                    Questa categoria rappresenta le unità di misura fisse.
+                </p>
+                <ul class="list">
+                    <li class="list__item">cm</li>
+                    <li class="list__item">mm</li>
+                    <li class="list__item">in</li>
+                    <li class="list__item">px *</li>
+                    <li class="list__item">pt</li>
+                    <li class="list__item">pc</li>
+                </ul>
+
+                <p class="text">
+                    <em>px *</em>: i pixel sono relativi al device in uso.
+                </p>
+
+                <br>
+                <h2>Relative Lengths</h2>
+                <p class="text">
+                    Questa categoria rappresenta le unità di misura che sono relative ad un'altra grandezza.
+                </p>
+                <ul class="list">
+                    <li class="list__item">
+                        <em>em</em>
+                        <p class="text">
+                            Relativo alla grandezza del font-size dell'elemento.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>rem</em>
+                        <p class="text">
+                            Relativo alla grandezza del font-size dell'elemento root.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>vw</em>
+                        <p class="text">
+                            Relativo al 1% della larghezza del viewport, ovvero la grandezza della finestra del browser.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>vh</em>
+                        <p class="text">
+                            Relativo al 1% dell'altezza del viewport.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>vmin</em>
+                        <p class="text">
+                            Relativo al 1% della grandezza più piccola del viewport.
+                        </p>
+                        <br>                    
+                    </li>
+                    <li class="list__item">
+                        <em>vmax</em>
+                        <p class="text">
+                            Relativo al 1% della grandezza più grande del viewport.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>%</em>
+                        <p class="text">
+                            Relativo all'elemento padre.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>ch</em>
+                        <p class="text">
+                            Relativo alla larghezza del carattere 0.
+                        </p>
+                        <br>
+                    </li>
+                    <li class="list__item">
+                        <em>ex</em>
+                        <p class="text">
+                            Relativo al x-height del font attualmente in uso.
+                        </p>
+                        <br>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2>Shorthand</h2>
+                <p class="text">
+                    Alcune proprietà possono essere raggrupate in un'unica proprietà, per esempio <em>background</em>.
+                    <br><br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background">https://developer.mozilla.org/en-US/docs/Web/CSS/background</a>
+                </p>
+                <pre>
+                    <code>
+        .contenitore {
+            width: 250px;
+            height: 250px;
+            background: url('/path/to/image.jpg') no-repeat left top;
+        }
+                    </code>
+                </pre>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="/modules/reference.html" class="btn">That's it (for now)</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
