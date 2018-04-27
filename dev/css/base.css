@@ -1,8 +1,9 @@
 body {
     background: $light;
     color: $base;
+    width: 100%;
+    overflow-x: hidden;
 }
-
 .btn {
     background: $base;
     color: #fcfcfc;
