@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Box Model</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Box Model</h1>
+            </header>
+
+            <main class="slide__main">
+                
+                <div class="text-align-center">
+                    <img src="../assets/img/boxmodel.gif" alt="">
+                </div>
+
+                <p class="text">
+                    Ogni elemento HTML viene rappresentato come un box rettangolare, caratterizzato da 4 parti:
+                </p>
+
+                <ul class="list">
+                    <li class="list__item">Content</li>
+                    <li class="list__item">Padding</li>
+                    <li class="list__item">Border</li>
+                    <li class="list__item">Margin</li>
+                </ul>
+
+                <hr>
+
+                <h2>Content</h2>
+                <p class="text">
+                    E' la parte dove viene rappresentato il contenuto dell'elemento, tipo del testo, delle immagini o altro.
+                </p>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <p>Questo è il contenuto</p>
+                    </code>
+                </pre>
+
+                <hr>
+
+                <h2>Padding</h2>
+                <p class="text">
+                    Rappresenta un'area trasparente attorno al contenuto.
+
+                    <br>
+                    Quest'area si gestisce tramite <em>padding-top, padding-right, padding-bottom e padding-left</em>,
+                    oppure tramite lo shorthand <em>padding</em>, che hanno come valore una grandezza, ma non può essere un valore negativo.
+                </p>
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .elemento {
+            padding: 10px 20px 30px 40px;
+        }
+                    </code>
+                </pre>
+
+                <hr>
+
+                <h2>Border</h2>
+                <p class="text">
+                    Il bordo è l'area che viene subito dopo il padding e, a differenza di quest'ultima, può essere 
+                    modificata di aspetto e conferisce un dettaglio grafico aggiuntivo all'elemento.
+
+                    <br>
+                    E' molto utile lo shorthand <em>border</em> per lavorare sul bordo, che raggrupa il 
+                    <em>border-width</em> <em>border-style</em> e <em>border-color</em>
+                </p>
+
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .bordo {
+            border: 2px solid red;
+        }
+                    </code>
+                </pre>
+                <h6 class="example">HTML</h6>
+                <pre>
+                    <code>
+        <div class="bordo">Contenuto di prova</div>
+                    </code>
+                </pre>
+                <h6 class="example">Risultato</h6>
+                <div class="result">
+                    <style>
+                        .bordo123 {
+                            border: 2px solid red;
+                            font-size: 2rem;
+                        }
+                    </style>
+                    <div class="bordo123">Contenuto di prova</div>
+                </div>
+
+                <hr>
+
+                <h2>Margin</h2>
+                <p class="text">
+                    Il margine rappresenta l'ultima area del box model, è trasparente come il padding 
+                    ma quando viene a contatto insieme al margine di un altro elemento (vale solo per i margini 
+                    verticali) si uniscono e il risultato viene dato dal margine più grande: questo fenomeno 
+                    si chiama <em>margin collapsing</em> e ci sono eccezioni in cui non si verifica, tipo 
+                    tra elementi posizionati in maniera assoluta.
+
+                    <br>
+                    Per quanto riguarda la proprietà, è uguale al padding, ovvero <em>margin-top, margin-right, margin-bottom e margin-left</em>, 
+                    oppure tramite lo shorthand <em>margin</em>, e il valore è una grandezza ma può avere valori negativi.
+                </p>
+
+                <h6 class="example">CSS</h6>
+                <pre>
+                    <code>
+        .elemento {
+            margin: 5px 10px 15px 5px;
+        }
+                    </code>
+                </pre>
+                <hr>
+
+               <h2>Box sizing</h2>
+               <p class="text">
+                   Il <em>box-sizing</em> è una proprietà CSS che stabilisce il modo in cui viene calcolata la grandezza 
+                   di un elemento, ovvero della width e della height.
+                   <br>
+                   Questa proprietà può avere 2 valori (oltre i 2 valori di base, initial o inherit): 
+               </p>
+               <ul class="list">
+                   <li class="list__item"><em>content-box</em>, ovvero la width e l'height dell'elemento includono solo il contenuto.</li>
+                   <li class="list__item"><em>border-box</em>, ovvero la width e l'height dell'elemento includono il contenuto, 
+                il padding e il border.</li>
+               </ul>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="../modules/display.html" class="btn">Display</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
