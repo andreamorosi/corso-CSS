@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Position</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Position</h1>
+            </header>
+
+            <main class="slide__main">
+                <p class="text">
+                    La proprietà <em>position</em> ha come obiettivo quello di specificare quale metodo di posizionamento viene 
+                    usato dall'elemento.
+                    <br>
+                    Di default gli elementi vengono posizionati tramite il metodo <em>static</em>, ovvero segue il flow 
+                    normale del documento e non può essere spostato tramite gli attributi <em>top, right, bottom, left e z-index.</em>, 
+                    di seguito una lista dei possibili metodi di posizionamento:
+                </p>
+                <ul class="list">
+                    <li class="list__item"><em>static</em></li>
+                    <li class="list__item"><em>relative</em></li>
+                    <li class="list__item"><em>absolute</em></li>
+                    <li class="list__item"><em>fixed</em></li>
+                    <li class="list__item"><em>sticky</em></li>
+                </ul>
+
+                <hr>
+
+                <h2>Relative</h2>
+                <p class="text">
+                    Con <em>position: relative;</em> l'elemento viene posizionato come la proprietà static, a differenza però 
+                    che è possibile cambiare la posizione finale, tramite le proprietà <em>top, right, bottom, left e z-index</em>, che come valore 
+                    devono avere una grandezza.
+                </p>
+
+                <hr>
+                
+                <h2>Absolute</h2>
+                <p class="text">
+                    Col posizionamento assoluto l'elemento verrà posizionato rispetto all' elemento 
+                    posizionato più vicino. Con elemento posizionato si intende un'elemento che ha la proprietà 
+                    <em>position</em> con qualsiasi valore ad eccezione di <em>static</em>.
+                </p>
+
+                <hr>
+
+                <h2>Fixed</h2>
+                <p class="text">
+                    Con <em>position: fixed;</em> l'elemento viene posizionato rispetto al viewport.
+                </p>
+
+                <hr>
+
+                <h2>Sticky</h2>
+                <p class="text">
+                    Con questo metodo l'elemento viene posizionato rispetto allo scroll dell'utente, al momento non è molto 
+                    supportato ⚠️
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
