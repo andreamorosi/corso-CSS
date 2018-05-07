@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Display</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Display</h1>
+            </header>
+
+            <main class="slide__main">
+                
+                <p class="text">
+                    Il <em>display</em> è una proprietà CSS che ci permette di controllare come viene interpretato il box 
+                    di un elemento.
+                    <br>
+                    Il valore di display più comune per gli elementi HTML è il <em>block</em>, ma ce ne sono molti:
+                </p>
+
+                <ul class="list">
+                    <li class="list__item"><em>block</em>: 
+                        <p class="text">
+                            L'elemento verrà mostrato come un blocco, iniziando su una nuova riga e 
+                            prendendo tutta la width disponibile. Un esempio è l'elemento <em>&lt;p&gt;</em>.
+                        </p>
+                    </li>
+                    <li class="list__item"><em>inline</em>:
+                        <p class="text">
+                            L'elemento verrà mostrato come un elemento in linea e non verrà alterato 
+                            dalle proprietà width ed height. Un esempio è l'elemento <em>&lt;span&gt;</em>
+                        </p> 
+                    </li>
+                    <li class="list__item"><em>inline-block</em>: 
+                        <p class="text">
+                            L'elemento verrà mostrato come un elemento a blocco in linea, tenendo 
+                            la formattazione come la proprietà <em>inline</em> ma è possibile cambiare la width ed height.
+                        </p>
+                    </li>
+                    <li class="list__item"><em>table</em>:
+                        <p class="text">
+                            L'elemento verrà mostrato come un elemento table, arcaico per responsive design.
+                        </p>
+                    </li>
+                    <li class="list__item"><em>none</em>: 
+                        <p class="text">
+                            L'elemento non viene mostrato nel documento HTML. 
+                            Differente da <em>visibility:hidden;</em> in quanto questa dichiarazione invece nasconde l'elemento ma non altera 
+                            il flusso del documento HTML, lasciando uno spazio vuoto al posto dell'elemento.
+                        </p>
+                    </li>
+                    <li class="list__item"><em>flex</em>: 
+                        <p class="text">
+                            L'elemento verrà mostrato come un elemento flex.
+                        </p>
+                    </li>
+                </ul>
+
+                <p class="text">
+                    Ma sono presenti moltissimi altri tipi di display, alcuni non supportati da alcuni browser, altri obsoleti e altri in 
+                    via di sviluppo.
+
+                    <br>
+                    <br>
+                    <a style="color:darkred;font-size: 2rem;" target="_blank" href="https://www.w3schools.com/cssref/pr_class_display.asp">https://www.w3schools.com/cssref/pr_class_display.asp</a>
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+                <a href="../modules/position.html" class="btn">Position</a>
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
