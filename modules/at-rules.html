@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - At-Rules</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">At-Rules</h1>
+            </header>
+
+            <main class="slide__main">
+                <pre>
+                    <code>
+        @IDENTIFIER (RULE);
+                    </code>
+                </pre>
+
+                <p class="text">
+                    Le <em>at-rules</em> raggruppano una serie di regole CSS che vengono appliccate 
+                    a qualcosa di specifico.
+                    <br>
+                    Sono presenti molte at-rules attualmente, ma per semplicità qui parleremo solo delle 
+                    3 più comuni. 
+                    <br>
+                    Per una lista completa ➡️ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">MDN web docs</a>
+                </p>
+
+                <ul class="list">
+                    <li class="list__item"><em>@import</em></li>
+                    <li class="list__item"><em>@media</em></li>
+                    <li class="list__item"><em>@font-face</em></li>
+                </ul>
+
+                <hr>
+
+                <h2>@import</h2>
+                <pre>
+                    <code>
+        @import url(stile.css);
+                    </code>
+                </pre>
+                <p class="text">
+                    L'at-rule <em>@import</em> ci consente di importare le regole CSS di un altro file CSS dentro 
+                    il nostro file attuale. Questo tipo di regola deve essere in cima al file, precedendo le altre regole.
+                </p>
+
+                <hr>
+
+                <h2>@media</h2>
+                <pre>
+                    <code>
+        @media screen {
+            p {
+                color: red;
+            }
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    L'at-rule <em>@media</em> ci consente di applicare le regole CSS situate al suo interno solo 
+                    ai <em>dispositivi</em>
+                    <a href="https://www.w3.org/TR/CSS2/media.html" target="_blank" style="font-size:14px;vertical-align: top;">(qui un elenco dei media types)</a>
+                </p>
+                <pre>
+                    <code>
+        @media print {
+            h1 {
+                background: yellow;
+            }
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    e/o <em>grandezze</em> che rispettino i criteri.
+                </p>
+                <pre>
+                    <code>
+        @media (max-width: 1200px) {
+            div {
+                background: blue;
+            }
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    Possiamo avere più regole CSS in una at-rule @media
+                </p>
+                <pre>
+                    <code>
+        @media screen {
+            p {
+                color: orange;
+            }
+            h1 {
+                background: black;
+            }
+        }
+                    </code>
+                </pre>
+                <h3><em>Media query</em></h3>
+                <p class="text">
+                    La versione più usata è la seconda, ovvero dove si specifica a quale grandezza (in genere larghezza) 
+                    dello schermo si vuole far applicare una o più regole CSS.
+                    <br>
+                    Ci sono diversi modi per fare delle media queries, per esempio nel caso in cui si voglia 
+                    applicare una regola CSS solo ai dispositivi/schermi di grandezza maggiore di un valore espresso 
+                    in una unità di misura supportata (per esempio <em>px, em, rem</em>, ma non <em>%</em>) 👇
+                </p>
+                <pre>
+                    <code>
+        @media (min-width: 800px) {
+            p {
+                color: green;
+            }
+        }
+                    </code>
+                </pre>
+                <br>
+                <p class="text">
+                    Oppure si vuole avere come target uno schermo con grandezza non maggiore di un valore
+                </p>
+                <pre>
+                    <code>
+        @media (max-width: 1000px) {
+            p {
+                font-size: 30px;
+            }
+        }
+                    </code>
+                </pre>
+                <p class="text">
+                    E' possibile anche applicare la media query solo ad un intervallo di grandezze
+                </p>
+                <pre>
+                    <code>
+        @media (min-width: 800px) and (max-width: 1200px) {
+            p {
+                background: red;
+            }
+        }
+                    </code>
+                </pre>
+
+                <hr>
+
+                <h2>@font-face</h2>
+                <pre>
+                    <code>
+        @font-face {
+            font-family: "Open Sans";
+            src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+                    url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+            }
+                    </code>
+                </pre>
+                <p class="text">
+                    L'at-rule <em>@font-face</em> ci consente di importare dei custom font nel nostro CSS.
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
