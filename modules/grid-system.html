@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - Grid System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">Grid System</h1>
+            </header>
+
+            <main class="slide__main">
+                <p class="text">
+                    Per <em>grid system</em> si intende un insieme di regole CSS che vanno a comporre 
+                    un sistema per costruire layout composto principalmente da 3 elementi:
+                </p><br>
+                <ul class="list">
+                    <li class="list_item">
+                        <em>Container</em><br>
+                        <p class="text">
+                            Spesso identificato con la classe <em>.container</em>, rappresenta il 
+                            contenitore che andrà a raggruppare al suo interno la griglia.
+                        </p><br>
+                    </li>
+                    <li class="list_item">
+                        <em>Row</em><br>
+                        <p class="text">
+                            Spesso identificato con la classe <em>.row</em>, rappresenta la riga che ha 
+                            la funzione di contenitore per le varie colonne.
+                        </p>
+                    </li>
+                    <li class="list_item">
+                        <em>Column</em><br>
+                        <p class="text">
+                            Spesso identificato con la classe <em>.col</em>, rappresenta l'ultima parte 
+                            del grid system, ovvero la colonna che racchiude il contenuto.
+                        </p><br>
+                    </li>
+                </ul>
+
+                
+                <div class="result">
+                    <style>
+                        .d1 {
+                            background: whitesmoke;
+                            border: 2px solid coral;
+                            padding: 4px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .d2 {
+                            background: lightcyan;
+                            border: 2px solid lightseagreen;
+                            padding: 4px;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                        }
+                        .d2 > p {
+                            flex: 1 100%;
+                        }
+                        .d3 {
+                            background: lightsteelblue;
+                            border: 2px solid lightsalmon;
+                            padding: 4px;
+                            flex: 1;
+                        }
+                        .d4 {
+                            background: lightgoldenrodyellow;
+                            border: 2px solid lightslategray;
+                            padding: 4px;
+                        }
+                    </style>
+                    <div class="d1">
+                        <p><i>Grid</i></p><br>
+                        <div class="d2">
+                            <p><i>Row</i></p><br>
+                            <div class="d3">
+                                <p><i>Column</i></p><br>
+                                <div class="d4"><p><i>Content</i></p></div>
+                            </div>
+                            <div class="d3">
+                                <p><i>Column</i></p><br>
+                                <div class="d4"><p><i>Content</i></p></div>
+                            </div>
+                            <div class="d3">
+                                <p><i>Column</i></p><br>
+                                <div class="d4"><p><i>Content</i></p></div>
+                            </div>
+                        </div>
+
+                        <div class="d2">
+                                <p><i>Row</i></p><br>
+                                <div class="d3">
+                                    <p><i>Column</i></p><br>
+                                    <div class="d4"><p><i>Content</i></p></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <br>
+                <p class="text">
+                    Guardando l'esempio è evidente che il <em>grid system</em> deve rispettare l'ordine <br><br>
+                    <em>Container > Row > Column</em><br> <br>
+                    dove il contenuto deve essere collocato all'interno della colonna.
+                </p>
+
+                <p class="text">
+                    Sono presenti molti <em>grid system</em> nel web, spesso usano tecniche molto simili per calcolare gli spazi e
+                    le dimensioni, tra le più famose:
+                    <br><br>
+                    <a style="background: lightcyan;" target="_blank" href="http://flexboxgrid.com/">Flexbox Grid</a>
+                    <br><br>
+                    <a style="background: lightcyan;" target="_blank" href="https://getbootstrap.com/docs/4.1/layout/grid/">Bootstrap4 Grid</a>
+                    <br>
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
