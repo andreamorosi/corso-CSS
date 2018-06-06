@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Corso CSS - CSS Methodologies</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/styles.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <section class="slide">
+            <header class="slide__header">
+                <h1 class="slide__header-title">CSS Methodologies</h1>
+            </header>
+
+            <main class="slide__main">
+                <p class="text">
+                    Esistono diverse metodologie, diverse prassi per scrivere un CSS ben organizzato, 
+                    facilitando la manutezione nel tempo del progetto, piccolo o grande che sia, e 
+                    il lavoro tra colleghi.
+                </p>
+
+                <ul class="list">
+                    <li class="list__item"><em>BEM</em></li>
+                    <li class="list__item"><em>OOCSS</em></li>
+                    <li class="list__item"><em>SMACSS</em></li>
+                </ul>
+
+                <hr>
+
+                <h2>BEM</h2>
+                <p class="text">
+                    BEM, che sta per <em>Block, Element, Modifier</em>, è una delle metodologie più 
+                    comuni per scrivere del CSS organizzato: questa tecnica si basa sul dividere l'interfaccia 
+                    utente in dei blocchi indipendenti, facilitando anche il riuso del codice. <br>
+
+                    Una delle differenze principali che caratterizza la metodologia <em>BEM</em> è sul naming 
+                    delle classi: il nome della classe deve identificare lo scopo, non lo stato. 
+                    <br>
+                    Per esempio un titolo, che secondo lo stile del progetto è di colore rosso,
+                     dovrà avere la classe <em>.title</em> anzichè <em>.color-red</em>.
+                </p>
+                <br>
+                <p class="text">
+                    Per scrivere seguendo la metodologia <em>BEM</em> è necessario capire come è organizzata,
+                    ovvero in <em>Block, Element e Modifier</em>:
+                </p>
+                <ul class="list">
+                    <li class="list__item">
+                        <h3>Block</h3>
+                        <p class="text">
+                            Il <em>Block</em> mi rappresenta un componente indipendente dalla pagina e a sua volta dagli altri
+                            componenti, quindi pronto per essere riusato in altre parti del progetto senza problemi.
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <h3>Element</h3>
+                        <p class="text">
+                            L'<em>Element</em> invece è dipendente da un altro componente, ovvero dal <em>Block</em>, 
+                            non da un altro <em>Element</em>.
+                            <br>
+                            Si identifica con doppio underscore, <em>__</em> .
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <h3>Modifier</h3>
+                        <p class="text">
+                            Il <em>Modifier</em> rappresenta lo stato di un <em>Block o Element</em>, per esempio 
+                            il colore, la grandezza, etc.
+                            <br>
+                            Si identifica con singolo underscore, <em>_</em> .
+                        </p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2>OOCSS</h2>
+                <p class="text">
+                    <em>Object Oriented CSS</em>, questa metodologia non ha uno standard, è più un concetto che spesso si va ad abbinare ad altre 
+                    metodologie.
+                    <br>
+                    <em>OOCSS</em> si basa su due concetti:
+                </p>
+                <ul class="list">
+                    <li class="list__item">
+                        <h3><em>SEPARATION OF STRUCTURE FROM SKIN</em></h3>
+                        <p class="text">
+                            Ovvero, una classe che definisce una struttura non deve specificare anche 
+                            dichiarazioni su colori, background, etc. <br>
+                            Questo serve per astrarre le regole sulla struttura dalle regole sulle regole più di dettaglio.
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <h3><em>SEPARATING CONTAINER FROM CONTENT</em></h3>
+                        <p class="text">
+                            Ovvero, ogni componente può essere riusato in diversi container, in diverse parti 
+                            della pagina senza presentare problemi.
+                        </p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2>SMACSS</h2>
+                <p class="text">
+                    <em>Scalable and Modular Architecture for CSS</em>, questa metodologia si concentra molto sulla parte semantica 
+                    del naming CSS.
+                    <br>
+                    Le regole sono due principalmente: le pagine sono divise in componenti maggiori e minori, e 
+                    la struttura generale in 5 parti:
+                </p>
+                <ul class="list">
+                    <li class="list__item">
+                        <p class="text">
+                            <em>Base</em>, il default che contiene le varie regole di reset.
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <p class="text">
+                            <em>Layout</em>, identifica le varie sezioni presenti in una pagina.
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <p class="text">
+                            <em>Module</em>, ovvero dei componenti riusabili, tipo una sidebar.
+                        </p>
+                        
+                    </li>
+                    <li class="list__item">
+                        <p class="text">
+                            <em>State</em>, identifica lo stato di un layout o di un modulo: hidden, expanded, active, inactive.
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <p class="text">
+                            <em>Theme</em>, identifica regole come colori, background, tipografia.
+                        </p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2>
+                    Atomic Design
+                </h2>
+
+                <div class="text-align-center">
+                    <img src="http://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png" alt="">
+                </div>
+                <p class="text">
+                    <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">http://bradfrost.com/blog/post/atomic-web-design/</a><br><br>
+                    <em>Atomic Design</em> non è una metodologia per scrivere CSS, ma per creare dei design systems.
+                    <br>
+                    L'obiettivo di questa metodologia è sul concentrarsi non su una pagina ma su i componenti, un concetto che va molto 
+                    in armonia con altre metodologie, sopratutto CSS: per esempio con la <em>BEM</em> .
+
+                    <br><br>
+                    <a target="_blank" href="https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving">https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving</a>
+                    
+                </p>
+            </main>
+
+            <footer class="slide__footer text-align-center">
+            </footer>
+        </section>
+        <script>
+            document.querySelectorAll("code").forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            });
+        </script>
+    </body>
+</html>
